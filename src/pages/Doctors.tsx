@@ -4,8 +4,11 @@ import Footer from "@/components/Footer";
 import DoctorGrid from "@/components/doctors/DoctorGrid";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const Doctors = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
@@ -17,6 +20,8 @@ const Doctors = () => {
             type="search" 
             placeholder="Search for doctors..." 
             className="pl-10"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
             <Search size={18} />

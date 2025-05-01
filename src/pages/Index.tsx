@@ -5,7 +5,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/products/ProductCard";
 import DoctorCard from "@/components/doctors/DoctorCard";
-import { Calendar, Phone, MonitorSmartphone, MessageSquare, Search, ShoppingCart, Star, User, Home } from "lucide-react";
+import { Calendar, Phone, MonitorSmartphone, MessageSquare, Search, ShoppingCart, Star, Home, Heart, Bell } from "lucide-react";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem, 
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
+import { Input } from "@/components/ui/input";
 
 const Index = () => {
   // Featured products data
@@ -60,78 +68,148 @@ const Index = () => {
     },
   ];
 
-  // Service categories
-  const serviceCategories = [
-    { icon: <Calendar className="w-6 h-6 text-mydent-500" />, title: "Book Appointment", link: "/consultations" },
-    { icon: <MonitorSmartphone className="w-6 h-6 text-mydent-500" />, title: "Video Consult", link: "/consultations" },
-    { icon: <Phone className="w-6 h-6 text-mydent-500" />, title: "Call Doctor", link: "/contact" },
-    { icon: <MessageSquare className="w-6 h-6 text-mydent-500" />, title: "Chat Support", link: "/contact" },
-    { icon: <Search className="w-6 h-6 text-mydent-500" />, title: "Search Doctor", link: "/doctors" },
-    { icon: <ShoppingCart className="w-6 h-6 text-mydent-500" />, title: "Products", link: "/products" },
+  // Promotional banners
+  const promotionalBanners = [
+    {
+      id: "promo-1",
+      title: "Happy Janmashtami",
+      description: "Nurture your body with natural & pure goodness of Ayurveda",
+      discount: "20% off",
+      image: "public/lovable-uploads/f84082f8-0943-41e0-ba6f-b6a19a7612ae.png"
+    },
+    {
+      id: "promo-2",
+      title: "Summer Sale",
+      description: "Get exclusive deals on all dental care products",
+      discount: "30% off",
+      image: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      id: "promo-3",
+      title: "New Customer Offer",
+      description: "First consultation free with any product purchase",
+      discount: "Free Consult",
+      image: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80"
+    }
   ];
 
-  // App Features
-  const appFeatures = [
-    { icon: <Calendar className="w-8 h-8 text-mydent-500" />, title: "Book Appointments", description: "Schedule your dental visits with ease" },
-    { icon: <Star className="w-8 h-8 text-mydent-500" />, title: "Top Rated Doctors", description: "Connect with verified dental specialists" },
-    { icon: <MonitorSmartphone className="w-8 h-8 text-mydent-500" />, title: "Video Consultations", description: "Get expert advice from anywhere" },
+  // Service categories data
+  const serviceCategories = [
+    { 
+      icon: <Calendar className="w-6 h-6 text-mydent-500" />, 
+      title: "Book Appointment", 
+      description: "With Top Ayurvedic Doctors",
+      link: "/consultations" 
+    },
+    { 
+      icon: <MonitorSmartphone className="w-6 h-6 text-mydent-500" />, 
+      title: "Instant Video Consultation", 
+      description: "Connects within 60 seconds",
+      link: "/consultations" 
+    },
+    { 
+      icon: <ShoppingCart className="w-6 h-6 text-mydent-500" />, 
+      title: "Buy Medicines", 
+      description: "Top Ayurvedic Products",
+      link: "/products" 
+    },
+    { 
+      icon: <Star className="w-6 h-6 text-mydent-500" />, 
+      title: "Beauty Products", 
+      description: "Exclusive lifestyle Products",
+      link: "/products" 
+    },
   ];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Header with location and icons */}
+      <div className="bg-white py-4 px-4 flex items-center justify-between border-b">
+        <div className="flex items-center">
+          <div className="text-green-600 mr-1">
+            <Home size={20} />
+          </div>
+          <div>
+            <p className="text-sm font-medium">Hi, User</p>
+            <p className="text-xs text-gray-500 flex items-center">
+              Add location <span className="ml-1">▼</span>
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Heart size={20} className="text-gray-500" />
+          <Bell size={20} className="text-gray-500" />
+          <div className="w-8 h-8 rounded-full bg-gray-300"></div>
+        </div>
+      </div>
+      
       <Navbar />
 
-      {/* Hero Banner */}
-      <section className="bg-white pt-4">
-        <div className="container mx-auto px-4">
-          <div className="bg-mydent-500 rounded-xl text-white p-4 md:p-6 flex flex-col md:flex-row items-center">
-            <div className="md:w-2/3 space-y-3 mb-4 md:mb-0">
-              <h1 className="text-2xl md:text-3xl font-bold">Digital Dental Care</h1>
-              <p className="text-sm md:text-base">Smart aligners and professional dental services at your fingertips</p>
-              <Button className="bg-white text-mydent-500 hover:bg-gray-100">
-                <Link to="/smile-design">Try Smile Design</Link>
-              </Button>
-            </div>
-            <div className="md:w-1/3">
-              <img 
-                src="public/lovable-uploads/ba4907f6-77f6-4c7e-a5bc-c8b581472a1c.png" 
-                alt="Dental care" 
-                className="h-40 w-auto mx-auto object-contain"
-              />
-            </div>
-          </div>
+      {/* Search bar */}
+      <div className="bg-white px-4 py-3 flex items-center space-x-3">
+        <div className="w-10 flex-none flex flex-col space-y-1">
+          <div className="h-1.5 w-8 bg-mydent-500 rounded-full"></div>
+          <div className="h-1.5 w-6 bg-mydent-500 rounded-full"></div>
+          <div className="h-1.5 w-4 bg-mydent-500 rounded-full"></div>
         </div>
-      </section>
+        
+        <div className="flex-1 relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+          <Input 
+            type="search" 
+            placeholder="Search for medicines and..." 
+            className="pl-9 border-gray-300 rounded-md"
+          />
+        </div>
+        
+        <Button variant="ghost" className="flex-none w-10 h-10 p-0 border border-gray-300 rounded-md">
+          <ShoppingCart size={20} className="text-mydent-500" />
+        </Button>
+      </div>
 
-      {/* Service Categories */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {serviceCategories.map((category, index) => (
-              <Link to={category.link} key={index} className="flex flex-col items-center text-center">
-                <div className="bg-gray-100 rounded-full p-4 mb-2">
-                  {category.icon}
+      {/* Promotional Banner Carousel */}
+      <div className="pt-2 px-4 bg-white">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {promotionalBanners.map((banner) => (
+              <CarouselItem key={banner.id}>
+                <div className="p-1">
+                  <img 
+                    src={banner.image} 
+                    alt={banner.title} 
+                    className="w-full h-40 object-cover rounded-lg"
+                  />
                 </div>
-                <span className="text-xs md:text-sm font-medium">{category.title}</span>
-              </Link>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center mt-2 gap-1.5">
+            {promotionalBanners.map((_, index) => (
+              <div 
+                key={index} 
+                className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-mydent-500' : 'bg-gray-300'}`}
+              />
             ))}
           </div>
-        </div>
-      </section>
+        </Carousel>
+      </div>
 
-      {/* App Features */}
-      <section className="py-8">
+      {/* Service Categories */}
+      <section className="py-4 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-xl font-bold mb-6 text-center">How mydent Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {appFeatures.map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm flex flex-col items-center text-center">
-                <div className="mb-4">
-                  {feature.icon}
+          <div className="grid grid-cols-2 gap-4">
+            {serviceCategories.map((category, index) => (
+              <Link to={category.link} key={index} className="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center text-center">
+                <div className="w-24 h-24 mb-3 rounded-lg overflow-hidden">
+                  <img 
+                    src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1576091160550-0173c99955c1' : '1576091160399-96cc52b86793'}?auto=format&fit=crop&w=150&q=80`} 
+                    alt={category.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
+                <h3 className="font-bold text-sm">{category.title}</h3>
+                <p className="text-xs text-gray-500 mt-1">{category.description}</p>
+              </Link>
             ))}
           </div>
         </div>
