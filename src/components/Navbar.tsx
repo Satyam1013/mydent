@@ -11,10 +11,10 @@ const Navbar = () => {
     <nav className="bg-white shadow-sm py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold bg-gradient-to-r from-bloom-600 to-mint-500 bg-clip-text text-transparent">
-            Bloom
+          <span className="text-2xl font-bold text-mydent-500">
+            mydent
           </span>
-          <span className="text-lg font-medium">Smile</span>
+          <span className="text-sm font-medium text-mydent-500">Clear aligners</span>
         </Link>
 
         {/* Mobile menu button */}

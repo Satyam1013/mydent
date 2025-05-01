@@ -10,7 +10,7 @@ const Doctors = () => {
       
       <div className="container mx-auto px-4 py-12">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Our Doctors</h1>
+          <h1 className="text-3xl font-bold mb-2 text-mydent-500">Our Doctors</h1>
           <p className="text-muted-foreground">
             Meet our team of experienced dental professionals ready to guide your smile journey.
           </p>

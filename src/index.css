@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,13 +13,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 60%;
+    --primary: 358 87% 59%; /* Updated to mydent red */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 172 70% 40%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 358 87% 85%; /* Lighter red for secondary */
+    --secondary-foreground: 358 87% 30%; 
 
-    --accent: 239 84% 67%;
+    --accent: 358 87% 59%; /* Accent is also mydent red */
     --accent-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
@@ -31,18 +30,18 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 222 84% 70%;
+    --ring: 358 87% 59%; /* Ring color to match primary */
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5% 26%;
-    --sidebar-primary: 240 6% 10%;
+    --sidebar-primary: 358 87% 59%; /* Updated to mydent red */
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 5% 96%;
     --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 358 87% 59%; /* Updated to mydent red */
   }
 
   .dark {
@@ -55,13 +54,13 @@
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 358 87% 59%; /* Updated to mydent red */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 172 70% 40%;
+    --secondary: 358 87% 35%; /* Darker red for dark mode */
     --secondary-foreground: 210 40% 98%;
 
-    --accent: 239 84% 67%;
+    --accent: 358 87% 59%; /* Updated to mydent red */
     --accent-foreground: 210 40% 98%;
 
     --muted: 217 33% 17%;
@@ -72,16 +71,16 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 224 76% 48%;
+    --ring: 358 87% 59%; /* Updated to mydent red */
     
     --sidebar-background: 240 6% 10%;
     --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary: 358 87% 59%; /* Updated to mydent red */
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4% 16%;
     --sidebar-accent-foreground: 240 5% 96%;
     --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 358 87% 59%; /* Updated to mydent red */
   }
 }
 

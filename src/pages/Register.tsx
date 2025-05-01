@@ -9,7 +9,13 @@ const Register = () => {
       <Navbar />
       
       <div className="flex-grow flex items-center justify-center bg-gray-50 py-12 px-4">
-        <RegisterForm />
+        <div className="w-full max-w-md">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-mydent-500 mb-2">Create Account</h1>
+            <p className="text-muted-foreground">Join mydent for your perfect smile journey</p>
+          </div>
+          <RegisterForm />
+        </div>
       </div>
       
       <Footer />

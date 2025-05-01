@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,6 +62,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+                mydent: {
+                    50: '#fff1f1',
+                    100: '#ffe1e1',
+                    200: '#ffc7c7',
+                    300: '#ffa0a0',
+                    400: '#ff6b6b',
+                    500: '#fc4747', /* Main mydent red */
+                    600: '#e62e2e',
+                    700: '#d11e1e',
+                    800: '#af1c1c',
+                    900: '#901c1c',
+                    950: '#500a0a',
+                },
                 bloom: {
                     50: '#f0f9ff',
                     100: '#e0f2fe',
